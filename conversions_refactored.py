@@ -31,7 +31,7 @@ def convert(fromUnit: str, toUnit: str, value: float) -> float:
             return startValue
         else:
             raise ConversionNotPossible(f"Unrecognized temperature unit: {toUnit}")
-    # distance check
+    # distance
     elif fromUnit in distanceUnits and toUnit in distanceUnits:
         if fromUnit == "miles":
             startValue = value * 1609.344
@@ -41,7 +41,7 @@ def convert(fromUnit: str, toUnit: str, value: float) -> float:
             startValue = value
         else:
             raise ConversionNotPossible(f"Unrecognized distance Unit: {fromUnit}")
-        # meter to toUnit
+
         if toUnit == "miles":
             return startValue / 1609.344
         elif toUnit == "yards":
@@ -50,6 +50,6 @@ def convert(fromUnit: str, toUnit: str, value: float) -> float:
             return startValue
         else:
             raise ConversionNotPossible(f"Unrecognized distance unit: {toUnit}")
-    else:           # no match
+    else:
         raise ConversionNotPossible(f"Cannot convert from '{fromUnit}' to '{toUnit}'.")
 

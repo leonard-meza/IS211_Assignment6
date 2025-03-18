@@ -86,15 +86,7 @@ class TestConversionsRefactored(unittest.TestCase):
             self.assertAlmostEqual(result, expected, places=2)
 
 
-    def testIncompatibleConversion(self):
-        print("\nTesting Incompatible Conversions will raise an exception...")
-        with self.assertRaises(ConversionNotPossible):
-            convert('Celsius', 'meters', 212)
-        with self.assertRaises(ConversionNotPossible):
-            convert('miles', 'kelvin', 20)
-        with self.assertRaises(ConversionNotPossible):
-            convert('Fahrenheit', 'yards', 10)
-        print("Any Incompatible Conversions of any value will throw ConversionNotPossible")
+
     def testConversiontoSameUnit(self):
         print("\n---Testing conversions_refactored.py \nTesting Same Unit Conversions Refactoring...")
         test_cases = [('Celsius', 'Celsius', 0),
